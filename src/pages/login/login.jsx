@@ -4,13 +4,16 @@ import LoginForm from '../../components/loginForm'
 
 import './login.less';
 import logo from './images/logo.png';
-import loginForm from '../../components/loginForm';
-
+import storage from '../../utilities/storage'
+import { Redirect } from 'react-router-dom';
 
 
 
 export default class Login extends Component {
     render() {
+        if(storage.getUser().id){
+            return <Redirect to='/'/>
+        }
         return (
             <div className="login">
                 <div className="login-top">

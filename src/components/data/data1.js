@@ -8,6 +8,10 @@ import Mock from 'mockjs';
 //     'city': '@city(true)' //中国城市
 //   }]
 // });
-Mock.mock('http://api.com', {
-    'loginInfo|0-1': 100, //100以内随机整数
+Mock.mock('/login', {
+    'loginInfo|0-1': 100, //0、1
+    'user':{
+        "name":"XiaoMing",
+        "id":1
+    }
 });
